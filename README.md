@@ -94,7 +94,7 @@ prompt> g++ -Wall -I../include -o 01-basic 01-basic.cpp && 01-basic
 | Construction |&nbsp;| **any**()                                        | default-construct             |
 | &nbsp;       |&nbsp;| **any**( any const & rhs )                       | copy-construct from other any |
 | &nbsp;       | C++11| **any**( any && rhs ) noexcept                   | move-construct from other any |
-| &nbsp;       | C++11| template< class ValueType ><br>**any**( ValueType && value ) noexcept | move-assign from value |
+| &nbsp;       | C++11| template< class ValueType ><br>**any**( ValueType && value ) | move-assign from value |
 | &nbsp;       | C++11| template< class T ><br>explicit **any**( in_place_type_t&lt;T>, Args&&... args ) | in-place-construct type T |
 | &nbsp;       | C++11| template< class T, class U, class... Args ><br>explicit **any**( in_place_type_t&lt;T>, std::initializer_list&lt;U> il, Args&&... args ) | in-place-construct type T |
 | &nbsp;       |<C++11| template< class ValueType ><br>**any**( ValueType const & value ) | copy-assign from value |

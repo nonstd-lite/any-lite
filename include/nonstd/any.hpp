@@ -461,7 +461,7 @@ public:
         class ValueType, class T = typename std::decay<ValueType>::type
         any_REQUIRES_T( ! std::is_same<T, any>::value )
     >
-    any( ValueType && value ) any_noexcept
+    any( ValueType && value )
     : content( new holder<T>( std::forward<ValueType>( value ) ) )
     {}
 

@@ -116,6 +116,22 @@ struct InitList
 };
 #endif
 
+#if any_CPP11_OR_GREATER && !any_CONFIG_NO_EXCEPTIONS
+struct CopyThrower
+{
+    CopyThrower() = default;
+    CopyThrower( CopyThrower const & ) { throw 42; }
+    CopyThrower( CopyThrower && ) noexcept = default;
+};
+
+struct MoveThrower
+{
+    MoveThrower() = default;
+    MoveThrower( MoveThrower const & ) = default;
+    MoveThrower( MoveThrower && ) { throw 43; }
+};
+#endif
+
 } // anonymous namespace
 
 //
@@ -187,6 +203,25 @@ CASE( "any: Allows to move-construct from value (C++11)" )
     EXPECT( !!"any: move-construction is not available (no C++11)" );
 #endif
 }
+
+#if any_CPP11_OR_GREATER
+CASE( "any: Value construction can throw while moving any does not" )
+{
+    EXPECT_NOT( (std::is_nothrow_constructible<any, int>::value) );
+    EXPECT( std::is_nothrow_default_constructible<any>::value );
+    EXPECT( std::is_nothrow_move_constructible<any>::value );
+}
+#endif
+
+#if any_CPP11_OR_GREATER && !any_CONFIG_NO_EXCEPTIONS
+CASE( "any: Propagates exceptions from copying and moving values" )
+{
+    CopyThrower const copy;
+    MoveThrower move;
+    EXPECT_THROWS_AS( (any( copy )), int );
+    EXPECT_THROWS_AS( (any( std::move( move ) )), int );
+}
+#endif
 
 CASE( "any: Allows to in-place construct from literal value (C++11)" )
 {
