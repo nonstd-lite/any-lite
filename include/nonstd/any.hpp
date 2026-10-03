@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2016-2018 Martin Moene
+// Copyright (c) 2016-2026 Martin Moene
 //
 // https://github.com/martinmoene/any-lite
 //
@@ -12,7 +12,7 @@
 #define NONSTD_ANY_LITE_HPP
 
 #define any_lite_MAJOR  0
-#define any_lite_MINOR  4
+#define any_lite_MINOR  5
 #define any_lite_PATCH  0
 
 #define any_lite_VERSION  any_STRINGIFY(any_lite_MAJOR) "." any_STRINGIFY(any_lite_MINOR) "." any_STRINGIFY(any_lite_PATCH)

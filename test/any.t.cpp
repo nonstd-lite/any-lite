@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2016-2018 Martin Moene
+// Copyright (c) 2016-2026 Martin Moene
 //
 // https://github.com/martinmoene/any-lite
 //
