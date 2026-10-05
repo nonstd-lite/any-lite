@@ -240,6 +240,8 @@ any: Allows to copy-construct from literal value
 any: Allows to copy-construct from const value
 any: Allows to copy-construct from lvalue references
 any: Allows to move-construct from value (C++11)
+any: Value construction can throw while moving any does not
+any: Propagates exceptions from copying and moving values
 any: Allows to in-place construct from literal value (C++11)
 any: Allows to in-place copy-construct from value (C++11)
 any: Allows to in-place move-construct from value (C++11)
