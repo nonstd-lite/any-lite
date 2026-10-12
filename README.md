@@ -128,6 +128,7 @@ prompt> g++ -Wall -I../include -o 01-basic 01-basic.cpp && 01-basic
 #### Tweak header
 
 If the compiler supports [`__has_include()`](https://en.cppreference.com/w/cpp/preprocessor/include), *any lite* supports the [tweak header](https://vector-of-bool.github.io/2020/10/04/lib-configuration.html) mechanism. Provide your *tweak header* as `nonstd/any.tweak.hpp` in a folder in the include-search-path. In the tweak header, provide definitions as documented below, like `#define any_CPLUSPLUS 201103L`.
+
 #### Standard selection macro
 
 \-D<b>any\_CPLUSPLUS</b>=199711L  
